@@ -1,9 +1,9 @@
 {
   "name": "@justeat/f-vue-icons",
   "version": "2.3.1",
-  "main": "dist/f-vue-icons.cjs.js",
-  "cdn": "dist/f-vue-icons.min.js",
-  "unpkg": "dist/f-vue-icons.min.js",
+  "main": "dist/f-vue-icons.umd.js",
+  "cdn": "dist/f-vue-icons.umd.js",
+  "unpkg": "dist/f-vue-icons.umd.js",
   "module": "dist/f-vue-icons.es.js",
   "files": [
     "dist",
@@ -31,7 +31,7 @@
   "scripts": {
     "prepublishOnly": "yarn lint && yarn test && yarn build",
     "build": "yarn build:icons && yarn build:dist",
-    "build:dist": "bili --format umd,es,cjs,umd-min --js buble --name f-vue-icons",
+    "build:dist": "vite build",
     "build:icons": "node build && babel src/components -d icons",
     "lint": "vue-cli-service lint --no-fix",
     "lint:fix": "yarn lint --fix",
@@ -52,13 +52,14 @@
     "@vue/cli-plugin-eslint": "4.5.8",
     "@vue/cli-plugin-unit-jest": "4.5.8",
     "@vue/test-utils": "1.0.3",
-    "bili": "3.4.2",
     "fs-extra": "9.0.1",
     "lodash.kebabcase": "4.1.1",
     "marked": "1.2.5",
     "pascal-case": "3.1.2",
     "poi": "12.10.3",
-    "prismjs": "1.22.0"
+    "prismjs": "1.22.0",
+    "vite": "2.0.0-beta.64",
+    "vite-plugin-vue2": "1.2.0"
   },
   "babel": {
     "presets": [
